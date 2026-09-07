@@ -34,7 +34,13 @@ app.use("/api/timeline", timelineRoutes);
 app.use("/api/places", placesRoutes);
 app.use("/api/videos", videoRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "AI Wedding System Backend is running successfully 🚀",
+  });
+});
 const PORT = process.env.PORT || 5000;
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
